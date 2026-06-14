@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the history, baking philosophies, and meet the master bakers behind Bakingo bakery.">
+  <title>About Us | Bakingo Bakery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header id="main-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="header-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary);"><path d="M12 2L2 22h20L12 2z"/><path d="M12 5l7.5 15h-15L12 5z"/></svg>
+        Baking<span>o</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html" id="nav-home">Home</a></li>
+          <li><a href="about.html" class="active" id="nav-about">About Us</a></li>
+          <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Open/Closed Badge -->
+        <div id="opening-status-badge" class="badge">
+          <span class="badge-dot"></span>
+          <span id="opening-status-text">Checking Hours</span>
+        </div>
+        
+        <!-- Cart Button -->
+        <button id="cart-toggle-btn" class="btn-icon cart-icon-btn" aria-label="Open Shopping Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span id="cart-badge" class="cart-count">0</span>
+        </button>
+        
+        <!-- Hamburger Menu -->
+        <button id="mobile-menu-btn" class="btn-icon menu-toggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero" id="about-hero">
+    <div class="container">
+      <h1>Our Baking Heritage</h1>
+      <p>Artisanal flour, wild starters, and ancient baking secrets.</p>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="section-padding" style="background-color: var(--color-white);" id="story-section">
+    <div class="container story-section">
+      <div class="story-img-container">
+        <img src="assets/chef.png" alt="Baker Chef dusting flour over dough in kitchen">
+      </div>
+      <div class="story-text">
+        <span class="sub" style="color: var(--color-primary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">Est. 1984</span>
+        <h3 style="margin-top: 8px;">Our Story</h3>
+        <p>
+          Founded as a small neighborhood shop, Bakingo was born out of a desire to bring simple, delicious, and fresh baking traditions to our community. We believe that great bread takes time, care, and simple ingredients.
+        </p>
+        <p>
+          We began with a single wild yeast starter, nicknamed "Lulu," which we have nourished and kept alive for over forty years. Lulu gives our sourdough boules their signature lactic tang, deep golden crust, and airy pockets that set them apart.
+        </p>
+        <p>
+          Every croissant is rolled by hand in the early hours of the morning, resulting in precisely 81 micro-layers of organic pasture-fed butter and flaky pastry dough. No short-cuts, no artificial additives—just water, flour, salt, yeast, and time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section-padding" id="philosophy-section">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub">Our Philosophy</span>
+        <h2>Three Simple Promises</h2>
+      </div>
+
+      <div class="philosophy-grid">
+        <!-- Promise 1 -->
+        <div class="philosophy-card" id="phil-1">
+          <div class="philosophy-number">01</div>
+          <h4>Sourced Locally</h4>
+          <p>We work exclusively with local mills that buy organic, stone-ground grain from independent farmers, supporting the local agricultural ecosystem.</p>
+        </div>
+        <!-- Promise 2 -->
+        <div class="philosophy-card" id="phil-2">
+          <div class="philosophy-number">02</div>
+          <h4>Slow &amp; Artisanal</h4>
+          <p>We do not use chemical accelerators. Our bread rises slowly over 36 hours under constant humidity, which makes the grains easier on the gut.</p>
+        </div>
+        <!-- Promise 3 -->
+        <div class="philosophy-card" id="phil-3">
+          <div class="philosophy-number">03</div>
+          <h4>Zero-Waste Baking</h4>
+          <p>Unsold pastries and loaves are donated to local shelters every evening, and organic waste is returned to nearby farm compost heaps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Bakers Section -->
+  <section class="section-padding" style="background-color: var(--color-white);" id="team-section">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub">Craftsmen at Work</span>
+        <h2>Meet the Artisans</h2>
+      </div>
+
+      <div class="team-grid">
+        <!-- Baker 1 -->
+        <div class="team-card" id="team-1">
+          <div class="team-img-wrap">
+            <img src="assets/chef.png" alt="Head Baker Pierre Laurent">
+          </div>
+          <div class="team-info">
+            <h4>Pierre Laurent</h4>
+            <div class="team-role">Founder &amp; Head Baker</div>
+            <p class="team-desc">With 40 years of sourdough stewardship, Pierre believes that wheat speaks a language only patience can translate.</p>
+          </div>
+        </div>
+
+        <!-- Baker 2 -->
+        <div class="team-card" id="team-2">
+          <div class="team-img-wrap">
+            <img src="assets/macarons.png" alt="Pastry Chef Sophie Dubois">
+          </div>
+          <div class="team-info">
+            <h4>Sophie Dubois</h4>
+            <div class="team-role">Master Pâtissier</div>
+            <p class="team-desc">Sophie trained under Paris's top confectioners. Her chocolate mirror glazes and macarons are edible modern art.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-wrapper"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
