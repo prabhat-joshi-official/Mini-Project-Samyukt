@@ -24,8 +24,9 @@
   --border-radius-lg: 24px;
   --border-radius-xl: 40px;
   
-  --transition-smooth: none;
-  --transition-fast: none;
+  --transition-smooth: all 300ms ease;
+  --transition-fast: all 250ms ease;
+  --transition-long: all 700ms cubic-bezier(0.21, 0.6, 0.35, 1);
   
   --box-shadow-soft: 0 10px 30px rgba(43, 27, 23, 0.03);
   --box-shadow-card: 0 15px 35px rgba(43, 27, 23, 0.06);
@@ -1664,5 +1665,195 @@ footer {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM ARTISAN ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* Page Load Animation */
+body {
+  animation: pageFadeIn 700ms ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Initial States for Intersection Observer */
+.fade-in-up, .fade-in-left, .fade-in-right, .scale-in {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Triggered States */
+.is-visible.fade-in-up {
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) forwards;
+}
+
+.is-visible.fade-in-left {
+  animation: fadeInLeft 700ms cubic-bezier(0.21, 0.6, 0.35, 1) forwards;
+}
+
+.is-visible.fade-in-right {
+  animation: fadeInRight 700ms cubic-bezier(0.21, 0.6, 0.35, 1) forwards;
+}
+
+.is-visible.scale-in {
+  animation: scaleIn 800ms cubic-bezier(0.21, 0.6, 0.35, 1) forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Navbar Page Load Animations */
+.logo {
+  opacity: 0;
+  animation: fadeInLeft 700ms ease forwards;
+}
+
+.nav-links li {
+  opacity: 0;
+  animation: fadeInUp 600ms ease forwards;
+}
+.nav-links li:nth-child(1) { animation-delay: 50ms; }
+.nav-links li:nth-child(2) { animation-delay: 100ms; }
+.nav-links li:nth-child(3) { animation-delay: 150ms; }
+
+.nav-actions {
+  opacity: 0;
+  animation: fadeInRight 700ms ease forwards;
+}
+
+/* Hero Section Specific Page Load Animations */
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) forwards;
+}
+
+.hero h1 {
+  opacity: 0;
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) 150ms forwards;
+}
+
+.hero-description {
+  opacity: 0;
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) 300ms forwards;
+}
+
+.hero-buttons .btn:nth-child(1) {
+  opacity: 0;
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) 400ms forwards;
+}
+.hero-buttons .btn:nth-child(2) {
+  opacity: 0;
+  animation: fadeInUp 700ms cubic-bezier(0.21, 0.6, 0.35, 1) 500ms forwards;
+}
+
+/* Stagger Utilities for Cards (Values, Team, Products) */
+.delay-150 { animation-delay: 150ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-450 { animation-delay: 450ms; }
+
+.footer-grid > div:nth-child(1) { animation-delay: 0ms; }
+.footer-grid > div:nth-child(2) { animation-delay: 150ms; }
+.footer-grid > div:nth-child(3) { animation-delay: 300ms; }
+.footer-grid > div:nth-child(4) { animation-delay: 450ms; }
+
+.products-grid > div:nth-child(1) { animation-delay: 0ms; }
+.products-grid > div:nth-child(2) { animation-delay: 150ms; }
+.products-grid > div:nth-child(3) { animation-delay: 300ms; }
+.products-grid > div:nth-child(4) { animation-delay: 450ms; }
+
+/* Micro-Interactions: Buttons */
+.btn {
+  transition: all 250ms ease;
+  will-change: transform, box-shadow;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Micro-Interactions: Images */
+img {
+  transition: transform 500ms ease;
+  will-change: transform;
+}
+
+.product-img-container:hover img,
+.team-img-wrap:hover img,
+.artisan-image-wrapper:hover img,
+.story-img-container:hover img {
+  transform: scale(1.02);
+}
+
+/* Micro-Interactions: Cards */
+.philosophy-card, .team-card, .product-card, .contact-card {
+  transition: all 300ms ease;
+  will-change: transform, box-shadow;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(43, 27, 23, 0.12);
+}
+
+.team-card:hover, .product-card:hover, .contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(43, 27, 23, 0.1);
+}
+
+/* Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

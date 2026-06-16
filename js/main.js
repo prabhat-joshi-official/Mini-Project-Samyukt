@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initOpeningHours();
   initCart();
+  initAnimations();
   
   if (document.getElementById('product-search') || document.getElementById('filter-buttons')) {
     initProductFilters();
@@ -11,6 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
   }
 });
+
+/* ==========================================================================
+   ANIMATIONS (Intersection Observer)
+   ========================================================================== */
+function initAnimations() {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Only trigger once
+      }
+    });
+  }, options);
+
+  // Target all elements that should animate on scroll
+  const animateElements = document.querySelectorAll(
+    '.fade-in-up, .fade-in-left, .fade-in-right, .scale-in, ' +
+    '.philosophy-card, .team-card, .product-card, .contact-card, .footer-grid > div'
+  );
+
+  animateElements.forEach(el => {
+    // Determine the animation class based on the element type if not explicitly set
+    if (!el.classList.contains('fade-in-up') && !el.classList.contains('fade-in-left') && !el.classList.contains('fade-in-right') && !el.classList.contains('scale-in')) {
+      el.classList.add('fade-in-up'); // Default fallback
+    }
+    observer.observe(el);
+  });
+}
 
 function initNavigation() {
   const header = document.getElementById('main-header');
