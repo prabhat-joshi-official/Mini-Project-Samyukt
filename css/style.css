@@ -364,54 +364,117 @@ header.scrolled .navbar {
 
 /* fadeInUp animation removed */
 
-/* Feature Showcase */
-.features-grid {
+/* Artisan Story Section */
+.artisan-story-section {
+  background-color: #F7F3EE;
+  padding: 100px 0;
+}
+
+.artisan-story-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 48px;
-}
-
-.feature-card {
-  background-color: var(--color-white);
-  padding: 40px 32px;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow-soft);
-  border: 1px solid var(--color-border);
-  transition: var(--transition-smooth);
-}
-
-.feature-card:hover {
-  box-shadow: var(--box-shadow-hover);
-  border-color: var(--color-primary);
-}
-
-.feature-icon {
-  width: 64px;
-  height: 64px;
-  background-color: var(--color-rose-light);
-  color: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
+  grid-template-columns: 55% 1fr;
+  gap: 60px;
   align-items: center;
-  justify-content: center;
+}
+
+.artisan-image-wrapper {
+  width: 100%;
+}
+
+.artisan-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(45, 31, 26, 0.08);
+}
+
+.artisan-content {
+  padding-right: 20px;
+}
+
+.artisan-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #C67A45;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.artisan-heading {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: #2D1F1A;
   margin-bottom: 24px;
-  font-size: 1.8rem;
-  transition: var(--transition-smooth);
+  line-height: 1.2;
 }
 
-.feature-card:hover .feature-icon {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.artisan-body {
+  margin-bottom: 40px;
 }
 
-.feature-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+.artisan-body p {
+  color: #6B5A50;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
 }
 
-.feature-card p {
-  color: var(--color-secondary-light);
+.artisan-body p:last-child {
+  margin-bottom: 0;
+}
+
+.artisan-highlights {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(107, 90, 80, 0.15);
+}
+
+.highlight-item:first-child {
+  border-top: 1px solid rgba(107, 90, 80, 0.15);
+}
+
+.highlight-text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: #2D1F1A;
+  font-weight: 600;
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .artisan-story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .artisan-image {
+    height: 400px;
+  }
+  
+  .artisan-heading {
+    font-size: 2.5rem;
+  }
 }
 
 /* Products Section (Landing Page) */
@@ -675,34 +738,47 @@ header.scrolled .navbar {
 
 .philosophy-card {
   background-color: var(--color-white);
-  padding: 40px;
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-border);
-  text-align: center;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
   transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .philosophy-card:hover {
-  box-shadow: var(--box-shadow-card);
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
 }
 
-.philosophy-number {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-gold);
-  line-height: 1;
-  margin-bottom: 16px;
+.philosophy-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
-.philosophy-card h4 {
-  font-size: 1.25rem;
+.philosophy-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.philosophy-content {
+  padding: 24px 0;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.philosophy-content h4 {
+  font-size: 1.5rem;
   margin-bottom: 12px;
+  color: var(--color-secondary);
 }
 
-.philosophy-card p {
+.philosophy-content p {
   color: var(--color-secondary-light);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 /* Meet the Bakers Section */
