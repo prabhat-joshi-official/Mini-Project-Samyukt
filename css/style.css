@@ -194,12 +194,12 @@ header.scrolled .navbar {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--color-secondary);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .logo span {
@@ -764,15 +764,33 @@ header.scrolled .navbar {
 }
 
 .philosophy-content {
-  padding: 24px 0;
-  text-align: left;
+  padding: 32px 24px;
+  text-align: center;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .philosophy-content h4 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
   color: var(--color-secondary);
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.philosophy-content h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 .philosophy-content p {
@@ -1572,27 +1590,57 @@ footer {
   gap: 24px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
+/* Responsive Breakpoints & Overrides */
+
+/* --- Tablet (768px - 1023px) --- */
+@media (max-width: 1023px) {
+  .container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  .hero h1 {
+    font-size: 4rem; /* 64px */
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
-  .story-section {
-    flex-direction: column;
-    gap: 40px;
-  }
+  
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  
   .philosophy-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+/* --- Mobile (up to 767px) --- */
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    white-space: nowrap;
+  }
+  
   .menu-toggle {
     display: inline-flex;
   }
@@ -1627,13 +1675,80 @@ footer {
   
   .hero {
     height: auto;
+    min-height: auto;
     padding: 140px 0 80px;
+    text-align: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* 40px */
   }
   
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .story-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .artisan-story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .artisan-image {
+    height: 350px;
+  }
+  
+  .artisan-heading {
+    font-size: 2.2rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-brand p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .products-controls {
     flex-direction: column;
     align-items: stretch;
@@ -1642,9 +1757,22 @@ footer {
   .search-wrap {
     width: 100%;
   }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+}
+
+/* --- Laptop & Desktop Base Settings --- */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 5.5rem; /* ~88px */
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero h1 {
+    font-size: 6.8rem; /* ~110px */
   }
 }
